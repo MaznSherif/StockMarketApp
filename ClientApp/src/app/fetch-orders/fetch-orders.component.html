@@ -1,0 +1,24 @@
+<h1>Orders</h1>
+
+<p *ngIf="!signalRService.order"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="signalRService.order">
+  <thead>
+    <tr>
+      <th>Person Name</th>
+      <th>Stock Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Commission</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sorder of signalRService.order">
+      <td>{{ sorder.orderedby().name }}</td>
+      <td>{{  sorder.stock.name }}</td>
+      <td>{{  sorder.stock.price }}</td>
+      <td>{{  sorder.quantity }}</td>
+      <td>{{  sorder.commission }}</td>
+    </tr>
+  </tbody>
+</table>

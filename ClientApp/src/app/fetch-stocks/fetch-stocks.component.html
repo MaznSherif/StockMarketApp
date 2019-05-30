@@ -1,0 +1,18 @@
+<h1>Stocks</h1>
+
+<p *ngIf="!signalRService.stock"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="signalRService.stock">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sstock of signalRService.stock">
+      <td>{{ sstock.name }}</td>
+      <td>{{ sstock.price }}</td>
+    </tr>
+  </tbody>
+</table>
